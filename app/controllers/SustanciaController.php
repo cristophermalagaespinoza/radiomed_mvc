@@ -1,0 +1,3 @@
+<?php
+declare(strict_types=1);
+class SustanciaController extends Controller { public function index(): void { require_role('ADMINISTRADOR'); $this->view('sustancias/index',['sustancias'=>(new Sustancia())->list()]); } public function store(): void { require_role('ADMINISTRADOR'); verify_csrf(); $nombre=post_text('nombre',120); $tipo=post_enum('tipo',['RADIACTIVA','QUIMICA']); $descripcion=post_text('descripcion',2000); $caso=post_text('caso_mundial',180,false); $peru=post_text('antecedente_peru',180,false); $id=(new Sustancia())->create($nombre,$tipo,$descripcion,$caso,$peru); audit_log('CREAR_SUSTANCIA','sustancias',$id,$nombre); flash('success','Sustancia registrada.'); redirect(url('sustancia')); } }

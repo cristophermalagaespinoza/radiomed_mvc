@@ -1,0 +1,3 @@
+<?php
+declare(strict_types=1);
+class AlertaController extends Controller { public function index(): void { require_role(['ADMINISTRADOR','EVALUADOR','ESPECIALISTA','AUTORIDAD']); $this->view('alertas/index',['alertas'=>(new Alerta())->list()]); } public function update(): void { require_role(['ADMINISTRADOR','ESPECIALISTA','AUTORIDAD']); verify_csrf(); $id=post_int('alerta_id',1,999999999); $estado=post_enum('estado',['PENDIENTE','REVISADA','CERRADA']); (new Alerta())->updateEstado($id,$estado); audit_log('ACTUALIZAR_ALERTA','alertas',$id,$estado); flash('success','Estado de alerta actualizado.'); redirect(url('alerta')); } }
