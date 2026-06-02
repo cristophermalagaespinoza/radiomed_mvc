@@ -1,1 +1,47 @@
-<div class="card"><h3>Auditoría del sistema</h3><p class="muted">Registro de accesos y operaciones críticas para revisión de seguridad.</p><div class="table-wrap"><table><thead><tr><th>Fecha</th><th>Usuario</th><th>Acción</th><th>Tabla</th><th>ID</th><th>Detalle</th><th>IP</th></tr></thead><tbody><?php foreach($logs as $l): ?><tr><td><?= e($l['created_at']) ?></td><td><?= e($l['usuario']) ?></td><td><?= e($l['accion']) ?></td><td><?= e($l['tabla_afectada']) ?></td><td><?= e((string)$l['registro_id']) ?></td><td><?= e($l['detalle']) ?></td><td><?= e($l['ip']) ?></td></tr><?php endforeach; ?></tbody></table></div></div>
+﻿<div class="card">
+<h3>Auditorí­a del sistema</h3>
+<p class="muted">Registro de accesos y operaciones crí­ticas para revisión de seguridad.</p>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>Fecha</th>
+<th>Usuario</th>
+<th>Acción</th>
+<th>Tabla</th>
+<th>ID</th>
+<th>Detalle</th>
+<th>IP</th>
+</tr>
+</thead>
+<tbody>
+<?php foreach($logs as $l): ?>
+<tr>
+<td>
+<?= e($l['created_at']) ?>
+</td>
+<td>
+<?= e($l['usuario']) ?>
+</td>
+<td>
+<?= e($l['accion']) ?>
+</td>
+<td>
+<?= e($l['tabla_afectada']) ?>
+</td>
+<td>
+<?= e((string)$l['registro_id']) ?>
+</td>
+<td>
+<?= e($l['detalle']) ?>
+</td>
+<td>
+<?= e($l['ip']) ?>
+</td>
+</tr>
+<?php endforeach; ?>
+</tbody>
+</table>
+</div>
+</div>
+

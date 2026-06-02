@@ -1,1 +1,30 @@
-<div class="card"><h3>Ambiente informativo Radiomed</h3><p class="muted">Información educativa para prevención, orientación y registro inicial. No constituye diagnóstico.</p></div><div class="info-grid"><?php foreach($sustancias as $s): ?><article class="card info-card"><span class="pill <?= $s['tipo']==='RADIACTIVA'?'risk-high':'risk-medium' ?>"><?= e($s['tipo']) ?></span><h3><?= e($s['nombre']) ?></h3><p><?= e($s['descripcion']) ?></p><dl><dt>Caso mundial</dt><dd><?= e($s['caso_mundial']) ?></dd><dt>Antecedente en Perú</dt><dd><?= e($s['antecedente_peru']) ?></dd></dl></article><?php endforeach; ?></div>
+﻿<div class="card">
+<h3>Ambiente informativo Radiomed</h3>
+<p class="muted">Información educativa para prevención, orientación y registro inicial. No constituye diagnóstico.</p>
+</div>
+<div class="info-grid">
+<?php foreach($sustancias as $s): ?>
+<article class="card info-card">
+<span class="pill <?= $s['tipo']==='RADIACTIVA'?'risk-high':'risk-medium' ?>">
+<?= e($s['tipo']) ?>
+</span>
+<h3>
+<?= e($s['nombre']) ?>
+</h3>
+<p>
+<?= e($s['descripcion']) ?>
+</p>
+<dl>
+<dt>Caso mundial</dt>
+<dd>
+<?= e($s['caso_mundial']) ?>
+</dd>
+<dt>Antecedente en Perú</dt>
+<dd>
+<?= e($s['antecedente_peru']) ?>
+</dd>
+</dl>
+</article>
+<?php endforeach; ?>
+</div>
+

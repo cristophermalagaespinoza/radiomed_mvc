@@ -8,6 +8,6 @@ const DB_PASS = '';
 
 const APP_NAME = 'Radiomed';
 const APP_SUBTITLE = 'Tamizaje preliminar radiológico y químico';
-const APP_ENV = 'DEMO_ACADEMICO_MVC';
+const APP_ENV = 'DEMO_ACADEMICO';
 
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
